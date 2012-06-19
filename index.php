@@ -59,11 +59,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 <body>
     <h1>meta tag checker</h1>
 	<form action="" method="post">
-        <textarea name="urls" rows="20" cols="150"><?php
+        <textarea placeholder="ここに1行1URLを貼り付ける！" name="urls" rows="20" cols="150"><?php
             if($_SERVER['REQUEST_METHOD'] == "POST"){
                 echo $_POST['urls'];
-            } else {
-                echo 'ここに1行1URLを貼り付ける！';
             }
         ?></textarea> 
         <input type="submit" />
