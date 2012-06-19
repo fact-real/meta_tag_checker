@@ -18,6 +18,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             }
 
             foreach ($data->find('meta') as $elements) {
+                if ($elements->getAttribute('name') == 'keywords') {
+                    $result .= '<p><span class="bold">keywords</span><br />' . $elements->getAttribute('content') . '</p>';
+                }
+            }
+
+            foreach ($data->find('meta') as $elements) {
                 if ($elements->getAttribute('name') == 'description') {
                     $result .= '<p><span class="bold">description</span><br />' . $elements->getAttribute('content') . '</p>';
                 }
