@@ -29,6 +29,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                 }
             }
 
+            foreach ($data->find('link') as $elements) {
+                if ($elements->getAttribute('rel') == 'index') {
+                    $result .= '<p><span class="bold">rel="index"</span><br />' . $elements->getAttribute('href') . '</p>';
+                }
+            }
+
             foreach ($data->find('h1') as $element) {
                 $result .= '<p><span class="bold">h1</span><br />' . $element->plaintext . '</p>';
             }
