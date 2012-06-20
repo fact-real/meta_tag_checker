@@ -36,7 +36,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             }
 
             foreach ($data->find('h1') as $element) {
-                $result .= '<p><span class="bold">h1</span><br />' . $element->plaintext . '</p>';
+                $result .= '<p><span class="bold">h1 plaintext</span><br />' . $element->plaintext . '</p>';
+            }
+
+            foreach ($data->find('h1 img') as $element) {
+                $result .= '<p><span class="bold">h1 img alt</span><br />' . $element->getAttribute('alt') . '</p>';
             }
             $result .= '<p class="white">---------------------------------------------------------------</p>';
             $result .= '</div>';
